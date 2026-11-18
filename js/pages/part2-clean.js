@@ -46,7 +46,7 @@ df["city"] = df["city"].str.strip()
 df["gender"] = df["gender"].str.upper().replace({"МЪЖ": "М", "ЖЕНА": "Ж"})
 # Корекция по речник (правописни грешки, латиница)
 df["city"] = df["city"].replace({"Сотия": "София", "Пловдв": "Пловдив", "sofia": "София", "ВАРНА": "Варна"})
-# Нечетко съпоставяне за неизвестни грешки
+# Търсене на най-сходната допустима стойност (fuzzy matching)
 from difflib import get_close_matches
 valid = ["София", "Пловдив", "Варна", "Бургас", "Русе", "Стара Загора", "Плевен"]
 df["city"] = df["city"].apply(lambda c: c if c in valid or pd.isna(c) else (get_close_matches(c, valid, n=1) or [None])[0])
