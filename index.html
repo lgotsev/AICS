@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EDA Лаборатория</title>
+  <meta name="description" content="Интерактивно учебно приложение: предварителен анализ и подготовка на данните.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2314284b'/%3E%3Crect x='7' y='17' width='4' height='8' fill='%23c9a227'/%3E%3Crect x='14' y='11' width='4' height='14' fill='%23c9a227'/%3E%3Crect x='21' y='6' width='4' height='19' fill='%23c9a227'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <button class="menu-btn" id="menuBtn" aria-label="Меню">☰</button>
+    <a class="brand" href="#/">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#c9a227"/><rect x="7" y="17" width="4" height="8" fill="#14284b"/><rect x="14" y="11" width="4" height="14" fill="#14284b"/><rect x="21" y="6" width="4" height="19" fill="#14284b"/></svg>
+      EDA Лаборатория <small>предварителен анализ и подготовка на данните</small>
+    </a>
+    <div class="spacer"></div>
+    <div class="source-switch" id="sourceSwitch" hidden>
+      <span class="lbl">Данни:</span>
+      <div class="seg" id="sourceSeg">
+        <button data-source="raw">Сурови</button>
+        <button data-source="clean">Почистени</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="layout">
+    <nav class="sidebar" id="sidebar" aria-label="Съдържание"></nav>
+    <main id="main" tabindex="-1"></main>
+  </div>
+
+  <div class="drawer-backdrop" id="backdrop"></div>
+  <aside class="drawer" id="drawer" aria-hidden="true">
+    <div class="drawer-head"><h3 id="drawerTitle">Информация</h3><button class="icon-btn" id="drawerClose" aria-label="Затвори">×</button></div>
+    <div class="drawer-body" id="drawerBody"></div>
+  </aside>
+
+  <script src="js/util.js"></script>
+  <script src="js/stats.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/quality.js"></script>
+  <script src="js/pipeline.js"></script>
+  <script src="js/charts.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/pages/home.js"></script>
+  <script src="js/pages/part1.js"></script>
+  <script src="js/pages/part2-clean.js"></script>
+  <script src="js/pages/part2-transform.js"></script>
+  <script src="js/pages/part2-result.js"></script>
+  <script>EDA.start();</script>
+</body>
+</html>
